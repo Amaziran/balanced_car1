@@ -1,7 +1,7 @@
 # balanced_car1
 基于STM32的PID平衡小车
 
-该文档中包括了PCB板、STM32CubeMX引脚配置文件以及所有的keil文件，PID算法原理见'PID闭环控制.png',这里说明各部分功能和引脚配置
+该文档中包括了PCB板、STM32CubeMX引脚配置文件以及所有的keil文件，PID算法原理见'PID闭环控制.png',下面说明各部分功能和引脚配置
 
 //OLED:
 //	SCL:PB8
@@ -46,6 +46,15 @@
 //	单片机TX:PB10  <-->  蓝牙RX
 //	单片机RX:PB11  <-->  蓝牙TX
 //	获取APP指令的中断在stm32f1xx_it.c文件234行**
+
+
+调试建议：
+
+这些变量的值会根据小车实际情况进行变化，要想获得较为可靠的平衡需要调节他们：
+平衡时角度机械中值Med_Angl；
+直立环比例系数Vertical_Kp,积分系数Vertical_Kd；
+速度环比例系数Velocity_Kp,微分系数Velocity_Ki；
+转向环比例系数Turn_Kp,积分系数Turn_Kd。
 
 
 
